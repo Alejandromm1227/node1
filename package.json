@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "Alejandro Mendez",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
 }
