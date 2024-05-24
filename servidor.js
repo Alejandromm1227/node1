@@ -3,10 +3,10 @@ import enrutadorUsuarios from "./rutas/rutasUsuarios.js";
 
 const servidor = express();
 
-servidor.use("/usuarios", enrutadorUsuarios);
+servidor.use("/usuarios", enrutadorUsuarios)
 
-servidor.get("/", function(req, res){
-    res.json({mensaje: "works!"});
+servidor.get("/", (solicitud, respuesta)=>{
+    respuesta.status(404).send("No Encontrado");
 })
 
 export default servidor;

@@ -1,21 +1,12 @@
 import { Router } from "express";
+import controladorUsuarios from "./controladores/controladorUsuario.js";
 
 const enrutadorUsuarios = Router();
 
-enrutadorUsuarios.post("./", (solicitud, respuesta) => {
-    respuesta.json({mensaje: "POST usuarios works!"});
-})
-enrutadorUsuarios.get("./:id", (solicitud, respuesta) => {
-    respuesta.json({mensaje: "GET usuario works!"});
-})
-enrutadorUsuarios.get("./", (solicitud, respuesta) => {
-    respuesta.json({mensaje: "GET usuarios works!"});
-})
-enrutadorUsuarios.put("./:id", (solicitud, respuesta) => {
-    respuesta.json({mensaje: "PUT usuarios works!"});
-})
-enrutadorUsuarios.delete("./:id", (solicitud, respuesta) => {
-    respuesta.json({mensaje: "DELETE usuarios works!"});
-})
+enrutadorUsuarios.post("/", controladorUsuarios.crearUsuario )
+enrutadorUsuarios.get("/:id", controladorUsuarios.leerUsuario )
+enrutadorUsuarios.get("/", controladorUsuarios.leerUsuarios)
+enrutadorUsuarios.put("/:id", controladorUsuarios.actualizarUsuario)
+enrutadorUsuarios.delete("/:id", controladorUsuarios.eliminarUsuario)
 
 export default enrutadorUsuarios;
