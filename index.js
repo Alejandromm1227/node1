@@ -1,15 +1,8 @@
 "use strict";
-console.log("works!");
+//importar otro js
+import servidor from "./servidor.js"
 
-const express = require("express");
-
-const servidor = express();
-
-servidor.get("/",(solicitud, respuesta)=>{
-    respuesta.json({
-        saludo : "hola, ya quedo"
-    })
+// lo q se hace en el servidor
+servidor.listen(3000, ()=> {
+    console.log("servidor corriendo ");
 });
-
-servidor.listen(3000);
-console.log("ya quedo");
