@@ -1,5 +1,5 @@
 import { Router } from "express";
-import controladorUsuarios from "./controladores/controladorUsuario.js";
+import controladorUsuarios from "../controladores/controladorUsuario.js"
 
 const enrutadorUsuarios = Router();
 
